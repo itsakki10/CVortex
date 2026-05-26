@@ -13,11 +13,11 @@ from backend.core.config import(
 )
 from backend.api.routes import router
 
-logger=logging.getLogger('ats_resume_scorer')
+logger=logging.getLogger('cvortex')
 
 @asynccontextmanager
 async def lifespan(app:FastAPI):
-    logger.info('Starting ATS Resume Analyzer API...')
+    logger.info('Starting CVortex API...')
 
     logger.info(f'Loading spaCy NLP model: {SPACY_MODEL_PRIMARY}')
     import spacy
@@ -63,7 +63,7 @@ app.include_router(router)
 @app.get('/')
 async def root():
     return {
-        'name':      'ATS Resume Analyzer API',
+        'name':      'CVortex API',
         'version':   '2.0.0',
         'endpoints': {
             'POST   /api/v1/analyze-resume': 'Analyze a resume',
