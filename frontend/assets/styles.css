@@ -2758,3 +2758,121 @@ button[data-baseweb="tab"] {
 [data-testid="stMetricValue"] {
     color: #111827 !important;
 }
+```css id="s3g6dx"
+/* =========================================
+   SIDEBAR FIX
+========================================= */
+
+section[data-testid="stSidebar"] {
+    background: linear-gradient(
+        180deg,
+        #F8F5FF 0%,
+        #F3EEFF 100%
+    ) !important;
+
+    border-right: 1px solid rgba(207, 109, 252, 0.15);
+}
+
+/* Sidebar text */
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] h4,
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] div {
+    color: #1E1B2E !important;
+}
+
+/* Sidebar inputs */
+section[data-testid="stSidebar"] input {
+    background: #FFFFFF !important;
+    color: #111827 !important;
+
+    border: 2px solid rgba(207, 109, 252, 0.25) !important;
+
+    border-radius: 16px !important;
+}
+
+/* Input focus */
+section[data-testid="stSidebar"] input:focus {
+    border: 2px solid #CF6DFC !important;
+
+    box-shadow:
+        0 0 0 4px rgba(207, 109, 252, 0.15) !important;
+}
+
+/* Password eye icon */
+section[data-testid="stSidebar"] svg {
+    color: #6B7280 !important;
+}
+
+/* Sidebar buttons */
+section[data-testid="stSidebar"] .stButton > button {
+
+    background: linear-gradient(
+        135deg,
+        #C1BFFF 0%,
+        #CF6DFC 100%
+    ) !important;
+
+    color: white !important;
+
+    border: none !important;
+
+    border-radius: 16px !important;
+
+    font-weight: 700 !important;
+
+    height: 52px !important;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+section[data-testid="stSidebar"] .stButton > button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(207, 109, 252, 0.35) !important;
+}
+
+/* Tabs */
+button[data-baseweb="tab"] {
+
+    color: #6B7280 !important;
+
+    font-weight: 600 !important;
+}
+
+/* Active tab */
+button[data-baseweb="tab"][aria-selected="true"] {
+
+    color: #CF6DFC !important;
+
+    border-bottom: 3px solid #CF6DFC !important;
+}
+
+/* Divider */
+section[data-testid="stSidebar"] hr {
+    border-color: rgba(0,0,0,0.08) !important;
+}
+
+/* Sidebar nav buttons */
+section[data-testid="stSidebar"] button[kind="secondary"] {
+
+    background: linear-gradient(
+        135deg,
+        #C1BFFF 0%,
+        #CF6DFC 100%
+    ) !important;
+
+    color: white !important;
+
+    border-radius: 18px !important;
+
+    border: none !important;
+}
+```
