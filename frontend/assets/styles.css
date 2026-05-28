@@ -1,40 +1,90 @@
 :root {
-    /* Primary Colors */
-    --primary-color: #4F46E5;
-    --primary-hover: #4338CA;
-    --primary-light: #818CF8;
-    --primary-dark: #3730A3;
-    
-    /* Status Colors */
-    --success-color: #10B981;
-    --success-light: #34D399;
-    --success-dark: #059669;
+
+
+    --primary-color: #CF6DFC;
+    --primary-hover: #B956F1;
+    --primary-light: #E4B7FF;
+    --primary-dark: #9E42D8;
+
+    --secondary-color: #C1BFFF;
+
+    --olive-color: #BDB96A;
+
+    --cream-color: #FDFBD4;
+
+
+    --success-color: #22C55E;
     --warning-color: #F59E0B;
-    --warning-light: #FBBF24;
-    --warning-dark: #D97706;
     --danger-color: #EF4444;
-    --danger-light: #F87171;
-    --danger-dark: #DC2626;
     --info-color: #3B82F6;
-    --info-light: #60A5FA;
-    --info-dark: #2563EB;
-    
-    /* Neutral Colors */
-    --text-primary: #1F2937;
-    --text-secondary: #6B7280;
-    --text-muted: #9CA3AF;
-    --background-light: #F9FAFB;
-    --background-white: #FFFFFF;
-    --border-color: #E5E7EB;
-    --border-light: #F3F4F6;
-    
-    /* Shadows */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    
-    /* Spacing */
+
+
+    --text-primary: #111827;
+    --text-secondary: #5B6475;
+    --text-muted: #8B95A7;
+
+
+    --background-light:
+        linear-gradient(
+            135deg,
+            rgba(253,251,212,0.35),
+            rgba(193,191,255,0.20),
+            rgba(207,109,252,0.10)
+        );
+
+    --background-white: rgba(255,255,255,0.72);
+
+    --card-bg: rgba(255,255,255,0.68);
+
+    --border-color: rgba(255,255,255,0.40);
+
+    /* =========================================
+       SHADOWS
+    ========================================= */
+
+    --shadow-sm:
+        0 4px 12px rgba(193,191,255,0.12);
+
+    --shadow-md:
+        0 10px 30px rgba(193,191,255,0.18);
+
+    --shadow-lg:
+        0 18px 45px rgba(207,109,252,0.20);
+
+    --shadow-xl:
+        0 25px 60px rgba(207,109,252,0.24);
+
+    /* =========================================
+       RADIUS
+    ========================================= */
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --radius-xl: 30px;
+    --radius-full: 999px;
+
+    /* =========================================
+       TYPOGRAPHY
+    ========================================= */
+
+    --font-family-base:
+        'Inter',
+        'Segoe UI',
+        sans-serif;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.1rem;
+    --font-size-xl: 1.4rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 3rem;
+
+    /* =========================================
+       SPACING
+    ========================================= */
+
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -42,38 +92,17 @@
     --spacing-xl: 2rem;
     --spacing-2xl: 3rem;
 
-    /* Typography */
-    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 2rem;
-    
-    /* Border Radius */
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    --radius-xl: 16px;
-    --radius-full: 9999px;
-    
-    /* Transitions */
+
+
     --transition-fast: 150ms ease;
-    --transition-base: 200ms ease;
-    --transition-slow: 300ms ease;
-    --transition-slower: 500ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+    --transition-slower: 600ms ease;
 }
 
 /* ============================================
    BASE STYLES & TYPOGRAPHY
    ============================================ */
-.stApp {
-    font-family: var(--font-family-base);
-    color: var(--text-primary);
-    line-height: 1.6;
-}
 
 /* Consistent heading styles */
 h1, h2, h3, h4, h5, h6 {
@@ -124,10 +153,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--radius-lg);
     text-align: center;
 }
-/* ====
-========================================
-   CARD STYLES
-   ============================================ */
+
 .metric-card {
     background: var(--background-white);
     border-radius: var(--radius-lg);
@@ -1060,9 +1086,6 @@ Animation utility classes */
     border-bottom-color: var(--primary-color);
 }
 
-/* ============================================
-   ACCORDION / EXPANDER STYLES
-   ============================================ */
 .accordion-item {
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
@@ -1096,10 +1119,7 @@ Animation utility classes */
     padding: var(--spacing-lg);
     animation: fadeIn var(--transition-base);
 }
-/* ====
-========================================
-   RESPONSIVE DESIGN - MOBILE FIRST
-   ============================================ */
+
 
 /* Extra small devices (phones, less than 576px) */
 @media (max-width: 575.98px) {
@@ -1232,15 +1252,8 @@ Animation utility classes */
         font-size: 12pt;
     }
 }
-/* ==
-==========================================
-   STREAMLIT-SPECIFIC OVERRIDES
-   ============================================ */
 
 /* Streamlit button enhancements */
-.stButton > button {
-    transition: all var(--transition-base) !important;
-}
 
 .stButton > button:hover {
     transform: translateY(-1px);
@@ -1378,10 +1391,7 @@ Animation utility classes */
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
-/* ==
-==========================================
-   UTILITY CLASSES
-   ============================================ */
+
 
 /* Text utilities */
 .text-center { text-align: center; }
@@ -1534,9 +1544,6 @@ Animation utility classes */
 .transition { transition: all var(--transition-base); }
 .transition-slow { transition: all var(--transition-slow); }
 
-/* ============================================
-   SPECIAL COMPONENTS
-   ============================================ */
 
 /* Score circle display */
 .score-circle {
@@ -1614,10 +1621,6 @@ Animation utility classes */
     border-color: var(--primary-light);
 }
 
-.feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-md);
-}
 
 .feature-title {
     font-size: var(--font-size-lg);
@@ -1720,4 +1723,953 @@ Animation utility classes */
     font-size: var(--font-size-sm);
     max-width: 300px;
     margin: 0 auto;
+}
+
+/* =========================================
+   GLOBAL APP DESIGN
+========================================= */
+
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+[data-testid="stSidebar"] {
+
+    background:
+        rgba(255,255,255,0.72);
+
+    backdrop-filter: blur(18px);
+
+    border-right:
+        1px solid rgba(255,255,255,0.35);
+}
+
+
+.stButton > button {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-color),
+            var(--primary-dark)
+        ) !important;
+
+    color: white !important;
+
+    border: none !important;
+
+    border-radius: 18px !important;
+
+    font-weight: 700 !important;
+
+    padding: 14px 24px !important;
+
+    box-shadow: var(--shadow-md);
+
+    transition: all 0.35s ease !important;
+}
+
+.stButton > button:hover {
+
+    transform:
+        translateY(-3px) scale(1.01);
+
+    box-shadow: var(--shadow-xl);
+}
+
+
+/* =========================================
+   METRIC CONTAINERS
+========================================= */
+
+[data-testid="metric-container"] {
+
+    background:
+        rgba(255,255,255,0.72);
+
+    border:
+        1px solid rgba(255,255,255,0.35);
+
+    border-radius: 22px;
+
+    padding: 20px;
+
+    backdrop-filter: blur(16px);
+
+    box-shadow: var(--shadow-sm);
+
+    transition: all 0.3s ease;
+}
+
+[data-testid="metric-container"]:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.metric-card,
+.feature-card,
+.card-elevated,
+.cv-card {
+
+    background: var(--card-bg);
+
+    border:
+        1px solid rgba(255,255,255,0.35);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 26px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: all 0.35s ease;
+}
+
+.metric-card:hover,
+.feature-card:hover,
+.card-elevated:hover,
+.cv-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* =========================================
+   FEATURE ICONS
+========================================= */
+
+
+
+@keyframes floatIcon {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--secondary-color),
+            var(--primary-color)
+        );
+
+    border-radius: 999px;
+}
+
+
+
+/* =========================================
+   HERO SUBTITLE
+========================================= */
+
+.hero-subtitle {
+
+    font-size: 1.1rem;
+
+    line-height: 1.9;
+
+    color: var(--text-secondary);
+
+    max-width: 760px;
+}
+
+/* =========================================
+   MAIN CONTENT AREA
+========================================= */
+
+.main .block-container {
+
+    padding-top: 2rem;
+
+    padding-left: 3rem;
+
+    padding-right: 3rem;
+
+    max-width: 1450px;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            #5B4CF0,
+            #CF6DFC
+        );
+
+    padding: 4rem 3rem;
+
+    border-radius: 32px;
+
+    text-align: center;
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px rgba(91,76,240,0.25);
+}
+
+
+/* =========================================
+   GLASS FEATURE CARDS
+========================================= */
+
+.feature-box {
+
+    background:
+        rgba(255,255,255,0.70);
+
+    backdrop-filter: blur(18px);
+
+    border:
+        1px solid rgba(255,255,255,0.45);
+
+    border-radius: 28px;
+
+    padding: 2rem;
+
+    min-height: 280px;
+
+    transition: all 0.35s ease;
+
+    box-shadow:
+        0 15px 35px rgba(193,191,255,0.15);
+}
+
+.feature-box:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 30px 60px rgba(207,109,252,0.20);
+}
+
+
+/* =========================================
+   FEATURE TITLES
+========================================= */
+
+.feature-box h3 {
+
+    font-size: 2rem;
+
+    font-weight: 800;
+
+    margin-top: 1.5rem;
+
+    margin-bottom: 1rem;
+
+    color: #1B1B2F;
+}
+
+
+/* =========================================
+   FEATURE PARAGRAPH
+========================================= */
+
+.feature-box p {
+
+    color: #5B6475;
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+
+    font-size: 3rem;
+
+    font-weight: 800;
+
+    margin-bottom: 2rem;
+
+    color: #111827;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.stTextInput input,
+.stPasswordInput input {
+
+    border-radius: 18px !important;
+
+    border:
+        1px solid rgba(207,109,252,0.25) !important;
+
+    padding: 14px !important;
+
+    background:
+        rgba(255,255,255,0.75) !important;
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease !important;
+}
+
+.stTextInput input:focus,
+.stPasswordInput input:focus {
+
+    border:
+        1px solid #CF6DFC !important;
+
+    box-shadow:
+        0 0 0 4px rgba(207,109,252,0.12) !important;
+}
+
+
+/* =========================================
+   SIDEBAR BUTTONS
+========================================= */
+
+[data-testid="stSidebar"] .stButton > button {
+
+    width: 100%;
+
+    border-radius: 18px !important;
+
+    margin-bottom: 12px;
+
+    font-weight: 700;
+
+    padding: 14px !important;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+hr {
+
+    border: none;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(207,109,252,0.30),
+            transparent
+        );
+
+    margin: 3rem 0;
+}
+
+/* =========================================================
+   PREMIUM UI UPGRADE
+========================================================= */
+
+:root{
+    --cream: #FDFBD4;
+    --olive: #BDB96A;
+    --lavender: #C1BFFF;
+    --purple: #CF6DFC;
+
+    --bg: #f7f5ff;
+    --card: rgba(255,255,255,0.72);
+
+    --text: #171717;
+    --muted: #666;
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html, body, [class*="css"]{
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(
+        180deg,
+        var(--lavender),
+        var(--purple)
+    );
+
+    border-radius: 999px;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+[data-testid="stSidebar"]{
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(18px);
+    border-right: 1px solid rgba(255,255,255,0.5);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-container{
+    position: relative;
+
+    padding: 20px 0 10px 0;
+
+    animation: fadeUp 0.8s ease;
+}
+
+.hero-badge{
+    display: inline-flex;
+    align-items: center;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.7);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    margin-bottom: 24px;
+
+    box-shadow:
+        0 10px 30px rgba(193,191,255,0.25);
+}
+
+
+.hero-heading{
+    font-size: 2rem;
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+.hero-subtitle{
+    max-width: 760px;
+
+    color: #5d5d6d;
+
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.stButton > button{
+    height: 64px;
+
+    border-radius: 22px !important;
+
+    border: none !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--lavender),
+            var(--purple)
+        ) !important;
+
+    color: white !important;
+
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+
+    box-shadow:
+        0 20px 40px rgba(207,109,252,0.35);
+
+    transition: all 0.35s ease;
+}
+
+.stButton > button:hover{
+    transform:
+        translateY(-4px)
+        scale(1.02);
+
+    box-shadow:
+        0 28px 55px rgba(207,109,252,0.45);
+}
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title{
+    font-size: 2.2rem;
+    font-weight: 800;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    color: #1b1733;
+}
+
+/* =========================================================
+   FEATURE CARDS
+========================================================= */
+
+.feature-box{
+    position: relative;
+
+    min-height: 350px;
+
+    padding: 34px;
+
+    border-radius: 32px;
+
+    background: rgba(255,255,255,0.60);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.7);
+
+    overflow: hidden;
+
+    transition: all 0.35s ease;
+
+    box-shadow:
+        0 10px 40px rgba(193,191,255,0.20);
+
+    animation: fadeUp 0.7s ease;
+}
+
+.feature-box::before{
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(207,109,252,0.20),
+            transparent 70%
+        );
+
+    top: -80px;
+    right: -80px;
+}
+
+.feature-box:hover{
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 25px 60px rgba(193,191,255,0.35);
+}
+
+
+.feature-box h3{
+    font-size: 2rem;
+    font-weight: 800;
+
+    margin-bottom: 18px;
+
+    color: #1d1d2f;
+}
+
+.feature-box p{
+    color: #5f6072;
+
+    line-height: 1.9;
+
+    font-size: 1.02rem;
+}
+
+.feature-list{
+    margin-top: 18px;
+    padding-left: 18px;
+
+    color: #555;
+}
+
+.feature-list li{
+    margin-bottom: 10px;
+}
+
+.feature-highlight{
+    margin-top: 18px;
+
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(193,191,255,0.25),
+            rgba(207,109,252,0.18)
+        );
+
+    font-weight: 700;
+}
+
+/* =========================================================
+   STEP CARDS
+========================================================= */
+
+.step-card{
+    padding: 28px;
+
+    border-radius: 28px;
+
+    background: rgba(255,255,255,0.65);
+
+    backdrop-filter: blur(14px);
+
+    transition: all 0.35s ease;
+
+    border: 1px solid rgba(255,255,255,0.7);
+
+    min-height: 220px;
+}
+
+.step-card:hover{
+    transform: translateY(-8px);
+}
+
+.step-number{
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    font-weight: 800;
+    font-size: 1.2rem;
+
+    margin-bottom: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cream),
+            var(--purple)
+        );
+
+    color: white;
+}
+
+/* =========================================================
+   SUCCESS BOX
+========================================================= */
+
+.stAlert{
+    border-radius: 24px !important;
+
+    border: none !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(253,251,212,0.55),
+            rgba(193,191,255,0.25)
+        ) !important;
+
+    backdrop-filter: blur(14px);
+
+    padding: 24px !important;
+
+    box-shadow:
+        0 15px 40px rgba(193,191,255,0.15);
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* =========================================================
+   BETTER BACKGROUND
+========================================================= */
+
+.stApp{
+    background:
+        radial-gradient(circle at top left,
+        rgba(193,191,255,0.22),
+        transparent 30%),
+
+        radial-gradient(circle at bottom right,
+        rgba(207,109,252,0.12),
+        transparent 35%),
+
+        linear-gradient(
+            135deg,
+            #fcfcff 0%,
+            #f8f6ff 45%,
+            #f5f1ff 100%
+        );
+}
+
+/* =========================================================
+   FIX FEATURE CARD RESPONSIVENESS
+========================================================= */
+
+.feature-box{
+    min-height: auto !important;
+
+    width: 100%;
+
+    padding: 32px 28px;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    word-break: normal;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.feature-box h3{
+    font-size: 2rem;
+
+    line-height: 1.25;
+
+    word-break: keep-all;
+
+    overflow-wrap: break-word;
+
+    margin-bottom: 18px;
+}
+
+.feature-box p{
+    font-size: 1rem;
+
+    line-height: 1.9;
+
+    overflow-wrap: break-word;
+}
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.feature-icon{
+    flex-shrink: 0;
+}
+
+/* =========================================================
+   TABLET RESPONSIVE
+========================================================= */
+
+@media screen and (max-width: 1200px){
+
+
+    .hero-heading{
+        font-size: 1.6rem;
+    }
+
+    .feature-box{
+        padding: 26px 22px;
+    }
+
+    .feature-box h3{
+        font-size: 1.6rem;
+    }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media screen and (max-width: 768px){
+
+    .hero-title{
+        font-size: 2.2rem !important;
+        line-height: 1.2;
+    }
+
+    .hero-heading{
+        font-size: 1.3rem;
+    }
+
+    .hero-subtitle{
+        font-size: 0.98rem;
+    }
+
+    .section-title{
+        font-size: 1.8rem;
+    }
+
+    .feature-box{
+        padding: 24px 20px;
+
+        border-radius: 24px;
+    }
+
+    .feature-box h3{
+        font-size: 1.4rem;
+    }
+
+    .feature-box p{
+        font-size: 0.95rem;
+    }
+
+    .step-card{
+        min-height: auto;
+    }
+}
+
+=====================================================
+   FOOTER
+===================================================== */
+
+.custom-footer {
+
+    margin-top: 5rem;
+
+    padding: 2rem;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    text-align: center;
+
+    backdrop-filter: blur(14px);
+}
+
+.footer-title {
+
+    font-size: 1.3rem;
+
+    font-weight: 700;
+
+    margin-bottom: 1rem;
+
+    color: rgb(8, 7, 7);
+}
+
+.footer-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 1rem;
+
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+
+    padding: 12px 18px;
+
+    border-radius: 14px;
+
+    text-decoration: none !important;
+
+    color: white !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(193,191,255,0.16),
+            rgba(207,109,252,0.22)
+        );
+
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 20px rgba(207,109,252,0.25);
 }
