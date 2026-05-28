@@ -2673,3 +2673,88 @@ html, body, [class*="css"]{
     box-shadow:
         0 10px 20px rgba(207,109,252,0.25);
 }
+
+/* =========================================
+   FORCE TEXT VISIBILITY FIX
+========================================= */
+
+/* Main app text */
+html,
+body,
+p,
+span,
+label,
+li,
+ul,
+ol,
+div {
+    color: #1E1B2E !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #111827 !important;
+}
+
+/* Streamlit markdown text */
+.stMarkdown,
+.stMarkdown p,
+.stMarkdown span {
+    color: #1E1B2E !important;
+}
+
+/* Sidebar text */
+section[data-testid="stSidebar"] * {
+    color: #F8FAFC !important;
+}
+
+/* Feature cards */
+.feature-card,
+.cv-card {
+    color: #1E1B2E !important;
+}
+
+/* Hero section fix */
+.hero-title,
+.hero-subtitle {
+    color: #111827 !important;
+}
+
+/* Fix faded white text */
+.main .block-container {
+    color: #1E1B2E !important;
+}
+
+/* Input labels */
+.stTextInput label,
+.stSelectbox label,
+.stTextArea label {
+    color: #F8FAFC !important;
+}
+
+/* Input text */
+input,
+textarea {
+    color: #FFFFFF !important;
+}
+
+/* Placeholder text */
+input::placeholder,
+textarea::placeholder {
+    color: #BBBBBB !important;
+}
+
+/* Tabs */
+button[data-baseweb="tab"] {
+    color: #FFFFFF !important;
+}
+
+/* Metric labels */
+[data-testid="stMetricLabel"] {
+    color: #1E1B2E !important;
+}
+
+/* Metric values */
+[data-testid="stMetricValue"] {
+    color: #111827 !important;
+}
