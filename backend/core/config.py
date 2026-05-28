@@ -43,8 +43,20 @@ SCORE_WEIGHTS = {
 JD_KEYWORD_WEIGHT=0.6
 JD_SEMANTIC_WEIGHT=0.4
 
-SUPABASE_URL       = os.getenv('SUPABASE_URL', '')
-SUPABASE_KEY       = os.getenv('SUPABASE_KEY', '')          # service_role — DB writes (bypasses RLS)
-SUPABASE_ANON_KEY  = os.getenv('SUPABASE_ANON_KEY', '')     # public anon — frontend auth calls
-SUPABASE_JWT_SECRET= os.getenv('SUPABASE_JWT_SECRET', '')   # used by backend to verify access tokens
-GROQ_API_KEY       = os.getenv('GROQ_API_KEY', '')
+try:
+    import streamlit as st
+
+    SUPABASE_URL = st.secrets.get("SUPABASE_URL", "")
+    SUPABASE_KEY = st.secrets.get("SUPABASE_KEY", "")
+    SUPABASE_ANON_KEY = st.secrets.get("SUPABASE_ANON_KEY", "")
+    SUPABASE_JWT_SECRET = st.secrets.get("SUPABASE_JWT_SECRET", "")
+    GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", "")
+
+except Exception:
+
+    SUPABASE_URL = os.getenv('SUPABASE_URL', '')
+    SUPABASE_KEY = os.getenv('SUPABASE_KEY', '')
+    SUPABASE_ANON_KEY = os.getenv('SUPABASE_ANON_KEY', '')
+    SUPABASE_JWT_SECRET = os.getenv('SUPABASE_JWT_SECRET', '')
+    GROQ_API_KEY = os.getenv('GROQ_API_KEY', '')
+ 
