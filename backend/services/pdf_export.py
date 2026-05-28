@@ -1,31 +1,120 @@
 import io
 import logging
 
-try:
-    from weasyprint import HTML, CSS
-    WEASYPRINT_INSTALLED = True
-except ImportError:
-    WEASYPRINT_INSTALLED = False
+from bs4 import BeautifulSoup
 
-logger = logging.getLogger('ats_resume_scorer')
+from reportlab.platypus import (
+    SimpleDocTemplate,
+    Paragraph,
+    Spacer,
+    PageBreak
+)
 
-def generate_combined_pdf(html_docs: dict[str, str]) -> bytes:
-    if not WEASYPRINT_INSTALLED:
-        raise ImportError("WeasyPrint is not installed. PDF generation unavailable.")
-        
-    documents = []
-    
-    # Render all 3 HTML strings to WeasyPrint Document objects
-    for name, html_str in html_docs.items():
-        doc = HTML(string=html_str).render()
-        documents.append(doc)
-    
-    # Merge them into the first document
-    first_doc = documents[0]
-    for other_doc in documents[1:]:
-        for page in other_doc.pages:
-            first_doc.pages.append(page)
-            
-    # Write combined PDF bytes
-    pdf_bytes = first_doc.write_pdf()
+from reportlab.lib.styles import (
+    getSampleStyleSheet
+)
+
+from reportlab.lib.pagesizes import (
+    letter
+)
+
+
+logger = logging.getLogger(
+    'ats_resume_scorer'
+)
+
+
+def clean_html(html:str)->str:
+
+    soup = BeautifulSoup(
+        html,
+        "html.parser"
+    )
+
+    return soup.get_text(
+        separator="\n"
+    )
+
+
+def generate_combined_pdf(
+    html_docs: dict[str, str]
+) -> bytes:
+
+    buffer = io.BytesIO()
+
+    doc = SimpleDocTemplate(
+        buffer,
+        pagesize=letter
+    )
+
+    styles = getSampleStyleSheet()
+
+    story=[]
+
+
+    title = Paragraph(
+        "CVortex ATS Report",
+        styles['Title']
+    )
+
+    story.append(title)
+
+    story.append(
+        Spacer(1,20)
+    )
+
+
+    for name,content in html_docs.items():
+
+        heading = Paragraph(
+            f"<b>{name}</b>",
+            styles['Heading2']
+        )
+
+        story.append(heading)
+
+        story.append(
+            Spacer(1,10)
+        )
+
+
+        cleaned_text = clean_html(
+            str(content)
+        )
+
+
+        paragraphs = cleaned_text.split(
+            "\n"
+        )
+
+
+        for p in paragraphs:
+
+            p=p.strip()
+
+            if p:
+
+                para = Paragraph(
+                    p,
+                    styles['BodyText']
+                )
+
+                story.append(para)
+
+                story.append(
+                    Spacer(1,8)
+                )
+
+
+        story.append(
+            PageBreak()
+        )
+
+
+    doc.build(story)
+
+    pdf_bytes = buffer.getvalue()
+
+    buffer.close()
+
     return pdf_bytes
