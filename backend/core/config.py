@@ -14,7 +14,7 @@ APP_VERSION='1.0.0'
 APP_DESCRIPTION='Analyze resumes against job descriptions using NLP + ML. Provides detailed scoring and feedback for job seekers.'
 
 ALLOWED_ORIGINS = [
-    'https://appapppy-ktwxupi73vqhjzweksze9d.streamlit.app/'
+    'https://appapppy-d7w9wzicgundg3bysngw8s.streamlit.app/'
 ]  
 
 #file 
